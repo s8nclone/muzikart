@@ -1,0 +1,23 @@
+.navLinks,
+.userLinks,
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    padding-inline: 2rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    box-shadow: .5px .5px 10px #5857576c;
+    z-index: 9999;
+}
+
+.userLinks,
+.navLinks {
+    gap: 1rem;
+}

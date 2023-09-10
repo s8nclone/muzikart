@@ -1,0 +1,44 @@
+.cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+    padding: 5rem;
+}
+
+.textBox {
+    font-size: 1.4rem;
+
+    em {
+        font-size: 2rem;
+    }
+}
+
+.gridBox {
+    width: 50%;
+    display: grid;
+    gap: .5rem;
+    grid-template-areas: 
+    'one one two two'
+    'one one two two'
+    'one one four four'
+    'one one four four'
+    'three three four four'
+    'three three four four';
+}
+
+.img_1 {
+    grid-area: one;
+}
+
+.img_2 {
+    grid-area: two;
+}
+
+.img_3 {
+    grid-area: three;
+}
+
+.img_4 {
+    grid-area: four;
+}
