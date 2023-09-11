@@ -21,6 +21,8 @@ function Footer() {
                             <li>Email</li>
                             <li>Hotline</li>
                             <li>Address</li>
+                            <li>Link</li>
+                            <li>Link</li>
                         </ul>
                     </div>
                     <div>
@@ -29,6 +31,18 @@ function Footer() {
                             <li>Promotion</li>
                             <li>FAQs</li>
                             <li>Sponsorship</li>
+                            <li>Link</li>
+                            <li>Link</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5>Links</h5>
+                        <ul>
+                            <li>Promotion</li>
+                            <li>FAQs</li>
+                            <li>Sponsorship</li>
+                            <li>Link</li>
+                            <li>Link</li>
                         </ul>
                     </div>
                 </div>

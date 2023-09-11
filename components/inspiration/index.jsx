@@ -1,29 +1,32 @@
 import React from 'react'
-import Image from 'next/image'
 import { FaLinkedin } from 'react-icons/fa6'
 import { FaXTwitter } from 'react-icons/fa6'
 import { FaGithub } from 'react-icons/fa6'
+import Link from 'next/link'
+import styles from './inspiration.module.scss'
 
 function InspirationSection() {
   return (
     <>
-        <section className='inspiration-section'>
+        <section className={styles.inspirationSection}>
             <h3>Inspiration</h3>
-            <div className='insp-speech'>
-                <blockquote>
+            <div className={styles.inspSpeech}>
+                <cite>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Veniam molestiae esse quod sequi dolores iusto soluta, 
                     hic ex vel quae totam enim velit dicta, 
                     obcaecati laboriosam ab corporis neque minima!
-                </blockquote>
+                </cite>
             </div>
-            <div className='socialDeck'>
-                <ul>
-                    <li><a><FaLinkedin /></a></li>
-                    <li><a><FaXTwitter /></a></li>
-                    <li><a><FaGithub /></a></li>
+            <div className={styles.socialDeck}>
+                <ul> Contact me:
+                    <li><Link href={"#"} ><FaLinkedin /></Link></li>
+                    <li><Link href={"#"} ><FaXTwitter /></Link></li>
+                    <li><Link href={"#"} ><FaGithub /></Link></li>
                 </ul>
             </div>
+
+            <button className={styles.cta}><Link href={"#"}>view code</Link></button>
         </section>
     </>
   )

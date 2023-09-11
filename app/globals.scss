@@ -17,7 +17,7 @@ body {
 }
 
 main {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -63,14 +63,22 @@ ul {
 }
 
 button {
-  font-size: 22px;
-  padding: 15px 25px;
+  padding: 15px;
+  font-size: 1.2rem;
   background-color: #5cadd2;
   color: #fff;
   border: 0;
   box-shadow: none;
   border-radius: 5px;
   cursor: pointer;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      color: #FFF;
+    }
+  }
 }
 
 a.button {
@@ -101,6 +109,7 @@ button.cta {
   font-family: Arial, Helvetica, sans-serif;
   background-color: $primaryColor;
   color: #ddd;
+  width: 10rem;
 }
 
 button.cta:hover {
@@ -133,8 +142,18 @@ select {
     .contact-section {
       display: flex;
       justify-content: space-between;
-      gap: 2rem;
+      gap: 3rem;
+      font-size: 1rem;
+
+      h5 {
+        font-size: 1.2rem;
+      }
+
     }
+  }
+
+  p {
+    font-size: .8rem;
   }
 }
 
@@ -166,6 +185,4 @@ select {
   }
 }
 
-blockquote {
-  font-size: 1.5rem;
-}
+
