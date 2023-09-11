@@ -17,8 +17,8 @@ function Header() {
             />
           </div>
           <div className={styles.navLinks}>
-            <Link href="#">Home</Link>
-            <Link href="#">Catalog</Link>
+            <Link href="/">Home</Link>
+            <Link href="/catalog">Catalog</Link>
             <Link href="#">Shop</Link>
           </div>
           <div className={styles.userLinks}>
