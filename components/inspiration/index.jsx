@@ -20,13 +20,13 @@ function InspirationSection() {
             </div>
             <div className={styles.socialDeck}>
                 <ul> Contact me:
-                    <li><Link href={"#"} ><FaLinkedin /></Link></li>
-                    <li><Link href={"#"} ><FaXTwitter /></Link></li>
-                    <li><Link href={"#"} ><FaGithub /></Link></li>
+                    <li><Link href={"https://www.linkedin.com/in/abdulmuiz-farayola-8a8484224/"} ><FaLinkedin /></Link></li>
+                    <li><Link href={"https://twitter.com/middles8n"} ><FaXTwitter /></Link></li>
+                    <li><Link href={"https://github.com/s8nclone"} ><FaGithub /></Link></li>
                 </ul>
             </div>
 
-            <button className={styles.cta}><Link href={"#"}>view code</Link></button>
+            <button className={styles.cta}><Link href={"https://github.com/s8nclone/muzikart"}>view code</Link></button>
         </section>
     </>
   )

@@ -7,6 +7,7 @@ import peace from '../../public/images/a-requiem-of-peace.png'
 import misery from '../../public/images/dear-misery.jpg'
 import divinity from '../../public/images/divinity.png'
 import newLife from '../../public/images/new-life.png'
+import Link from 'next/link'
 
 function IntroBody() {
   return (
@@ -14,7 +15,7 @@ function IntroBody() {
         <div className={styles.textBox}>
             <h3>Your <em>Album</em> and <em>Artiste</em> name</h3>
             <h3>on <em>Custom</em> Album Design</h3>
-            <button className='cta'>Shop Now</button>
+            <Link href='/catalog'><button className='cta'>Shop Now</button></Link>
         </div>
         <div className={styles.gridBox}>
             <Image src={peace} alt='image 1' className={styles.img_1} width={200} height={300} />

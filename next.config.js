@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {}
+const nextConfig = {}
 
-// module.exports = nextConfig
+module.exports = nextConfig
 // next.config.js
 // module.exports = {
 //     webpack: (config, { isServer }) => {
@@ -15,11 +15,11 @@
 //     },
 // };
   
-module.exports = {
-  webpack5: true,
-  webpack: (config) => {
-    config.resolve.fallback = { fs: false };
+// module.exports = {
+//   webpack5: true,
+//   webpack: (config) => {
+//     config.resolve.fallback = { fs: false };
 
-    return config;
-  },
-};
+//     return config;
+//   },
+// };

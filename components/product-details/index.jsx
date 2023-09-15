@@ -11,12 +11,12 @@ const ProductDetails = ({ product, addToCart }) => {
         <button className={`button ${styles.addToCart}`} onClick={() => addToCart(product)}>Add to Cart</button>
         <Image
           src={(`/images/albums/${product.imageName}`)}
-          width={400}
-          height={400}
+          width={200}
+          height={200}
           alt={product.name}
         />
       </div>
-      <div className={styles.title}><Link href={`/product/${product._id}`}>{product.title}</Link></div>
+      <div className={styles.title}><Link href={`/catalog/[id]`} as={`/catalog/${product._id}`}>{product.title}</Link></div>
       <div className={styles.price}>{currencyFormat(product.price)}</div>
     </div>
   );
