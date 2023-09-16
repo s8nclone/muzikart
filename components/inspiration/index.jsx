@@ -20,7 +20,7 @@ function InspirationSection() {
                     engage with music on a visual level. It encourages users to explore the rich tapestry of
                     album artwork, customize it to their liking, and share their unique creations with the world.
                     The sense of community and collaboration within the app fosters creativity and allows users to express
-                    their passion for music in a whole new way. Whether you're a die-hard music fan or a budding graphic 
+                    their passion for music in a whole new way. Whether you are a die-hard music fan or a budding graphic 
                     designer, MuzikArt invites you to be part of a vibrant and artistic music-loving community.
 
                 </cite>
