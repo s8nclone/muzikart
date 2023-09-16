@@ -22,7 +22,7 @@ function Header() {
             <Link href="#">Shop</Link>
           </div>
           <div className={styles.userLinks}>
-            <Link href="#">Cart</Link>
+            <Link href="/cart">Cart</Link>
             <Link href="#">Login</Link>
           </div>
         </nav>

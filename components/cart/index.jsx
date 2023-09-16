@@ -4,6 +4,10 @@ import styles from './Cart.module.scss'
 
 export default function Cart({ cartItems, removeItemFromCart }) {
   function getCartTotal() {
+    if (!cartItems) {
+      return "Loading..."; // or handle the case when cartItems is undefined
+    }
+
     const totalCost = cartItems.reduce((prev, curr) => {
       const itemPrice = curr.discount === 0 ? curr.price : curr.price * (1 - curr.discount)
       return prev + itemPrice
@@ -24,16 +28,16 @@ export default function Cart({ cartItems, removeItemFromCart }) {
         {cartItems.map((product, i) => (
           <li className={styles.cartItem} key={i}>
             <CartItem product={product} removeItemFromCart={removeItemFromCart} />
-          </li >
+          </li>
         ))}
-      </ul >
+      </ul>
     )
   }
 
   return (
     <div className={styles.container}>
-      {cartItems.length > 0 ? renderCart() : renderEmptyCart()}
-      {cartItems.length > 0 ? <div className={styles.total}>Total: {getCartTotal()}</div> : null}
+      {cartItems && cartItems.length > 0 ? renderCart() : renderEmptyCart()}
+      {cartItems && cartItems.length > 0 ? (<div className={styles.total}>Total: {getCartTotal()}</div>) : null}
     </div >
   )
 }
