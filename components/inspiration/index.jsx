@@ -22,7 +22,6 @@ function InspirationSection() {
                     The sense of community and collaboration within the app fosters creativity and allows users to express
                     their passion for music in a whole new way. Whether you are a die-hard music fan or a budding graphic 
                     designer, MuzikArt invites you to be part of a vibrant and artistic music-loving community.
-
                 </cite>
             </div>
             <div className={styles.socialDeck}>
