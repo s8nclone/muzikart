@@ -23,7 +23,7 @@ function FeaturesSection() {
             <div className='featureContainer'>
                 <div className='featureDescription'>
                     <h1>Download Images in different formats</h1>
-                    <p> Save your edited artworks to your device's gallery in different formats or share them directly on social media platforms.
+                    <p> Save your edited artworks to your device gallery in different formats or share them directly on social media platforms.
                         You can also use them as wallpaper or profile pictures to show off your musical tastes.
                     </p>
                 </div>
