@@ -10,7 +10,7 @@ function FeaturesSection() {
         <section className='featureSection'>
             <div className='featureContainer'>
                 <div className='featureImageContainer'>
-                    <Image src={uploadImage} width={300} height={300} className='featureImage'/>
+                    <Image src={uploadImage} width={300} height={300} className='featureImage' alt='upload image'/>
                 </div>
                 <div className='featureDescription'>
                     <h1>Upload any image and edit</h1>
@@ -28,12 +28,12 @@ function FeaturesSection() {
                     </p>
                 </div>
                 <div className='featureImageContainer'>
-                    <Image src={saveImage} width={300} height={300} className='featureImage'/>
+                    <Image src={saveImage} width={300} height={300} className='featureImage' alt='save image'/>
                 </div>
             </div>
             <div className='featureContainer'>
                 <div className='featureImageContainer'>
-                    <Image src={editImage} width={300} height={300} className='featureImage'/>
+                    <Image src={editImage} width={300} height={300} className='featureImage' alt='edit image'/>
                 </div>
                 <div className='featureDescription'>
                     <h1>Edit pictures to your liking!</h1>
