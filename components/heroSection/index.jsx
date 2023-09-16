@@ -7,7 +7,7 @@ function HeroIntro() {
   return (
     <div className={styles.heroContainer}>
         <h1 className={montserrat.className}>MUZIKART</h1>
-        <p>Home of quality Album art ...</p>
+        <p>Connecting creatives; music enthusiasts and artist alike...</p>
     </div>
   )
 }

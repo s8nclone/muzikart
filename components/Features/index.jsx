@@ -14,19 +14,17 @@ function FeaturesSection() {
                 </div>
                 <div className='featureDescription'>
                     <h1>Upload any image and edit</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eligendi accusamus enim similique dolorem! Quas tempora dolores rem voluptate 
-                        facilis adipisci nemo recusandae aperiam dolorum ducimus ad labore quia, veniam beatae?
+                    <p> Are you a designer or music creator, share your artistic talents with the world by uploading your original album artwork,
+                        remake, edit, fine tune, and do lots more. Showcase your designs alongside established artists,
+                        making your mark in the music and art communities.
                     </p>
                 </div>
             </div>
             <div className='featureContainer'>
                 <div className='featureDescription'>
                     <h1>Download Images in different formats</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Modi porro blanditiis, voluptate, asperiores nesciunt tempore vero
-                        aperiam ipsam iure explicabo mollitia voluptas hic voluptatum qui quaerat libero atque.
-                        Maiores, dolorem.
+                    <p> Save your edited artworks to your device's gallery in different formats or share them directly on social media platforms.
+                        You can also use them as wallpaper or profile pictures to show off your musical tastes.
                     </p>
                 </div>
                 <div className='featureImageContainer'>
@@ -39,9 +37,8 @@ function FeaturesSection() {
                 </div>
                 <div className='featureDescription'>
                     <h1>Edit pictures to your liking!</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                        Nam, neque, distinctio ab voluptatum quos eius molestias, quo quasi rerum deleniti 
-                        tempore possimus laudantium sapiente quidem. Porro quae quia provident explicabo!
+                    <p> Unleash your creativity by customizing existing album covers or designing your own.
+                        Use a wide range of tools, filters, and effects to give your favorite albums a personal touch.
                     </p>
                 </div>
             </div>
