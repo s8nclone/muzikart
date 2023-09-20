@@ -45,7 +45,7 @@ MuizikArt offers a wide range of features:
 - Discover new music based on your edited covers and music preferences.
 - Connect with other music and art enthusiasts for collaboration and inspiration.
 
-<img src="muzikart-screenshot.png" alt="muzikart image" width="50px" />
+<img src="muzikart-screenshot.png" alt="muzikart image" width="750px" />
 
 ## Contributing
 We welcome contributions from the community!
