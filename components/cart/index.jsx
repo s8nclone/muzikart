@@ -3,15 +3,36 @@ import { currencyFormat } from '../../utils/numericFormatters'
 import styles from './Cart.module.scss'
 
 export default function Cart({ cartItems, removeItemFromCart }) {
+  
   function getCartTotal() {
-    if (!cartItems) {
-      return "Loading..."; // or handle the case when cartItems is undefined
+    if (!Array.isArray(cartItems) || cartItems.length === 0) {
+      return "your cart is empty"; // handle the case when cartItems is undefined
     }
 
     const totalCost = cartItems.reduce((prev, curr) => {
-      const itemPrice = curr.discount === 0 ? curr.price : curr.price * (1 - curr.discount)
-      return prev + itemPrice
-    }, 0)
+      const itemPrice = Number(curr.price);
+      let itemDiscount = Number(curr.discount);
+
+      // console.log(itemPrice);
+      // console.log(itemDiscount)
+    
+      // Check if the discount is provided as a percentage and convert it to a decimal if needed
+      if (itemDiscount >= 1) {
+        itemDiscount /= 100; // Convert percentage to decimal
+      } else {
+        itemDiscount = 0;
+      }
+      // console.log(itemDiscount);
+    
+      // Check for valid numerical values
+      if (isNaN(itemPrice) || isNaN(itemDiscount)) {
+        return prev;
+      }
+    
+      const discountedPrice = itemPrice * (1 - itemDiscount);
+    
+      return prev + discountedPrice;
+    }, 0);
 
     return currencyFormat(totalCost)
   }

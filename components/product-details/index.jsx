@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from './ProductDetails.module.scss';
-import { currencyFormat } from '../../utils/numericFormatters'
+import { currencyFormat, formatPercentage } from '../../utils/numericFormatters'
 
 const ProductDetails = ({ product, addToCart }) => {
   return (
@@ -18,6 +18,7 @@ const ProductDetails = ({ product, addToCart }) => {
       </div>
       <div className={styles.title}><Link href={`/catalog/[id]`} as={`/catalog/${product._id}`}>{product.title}</Link></div>
       <div className={styles.price}>{currencyFormat(product.price)}</div>
+      <div className={styles.discount}>{product.discount !== null ? formatPercentage(product.discount) : null}</div>
     </div>
   );
 };
