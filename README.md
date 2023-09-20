@@ -6,7 +6,7 @@ MuzikArt is a creative platform that allows you to explore, customize, upload, a
 
 - **Live Demo**: [MuzikArt App](https://muzikart.vercel.app/)
 
-- **Project Blog Article**: [Read our Blog](Link to your final project blog article)
+- **Project Blog Article**: [Read our Blog](https://www.linkedin.com/posts/abdulmuiz-farayola-8a8484224_muzikart-this-project-helps-a-music-creative-activity-7109551645310525440-b06h?utm_source=share&utm_medium=member_desktop)
 
 - **Author(s) LinkedIn Profiles**:
   - [Dayo Farayola](https://www.linkedin.com/in/abdulmuiz-farayola-8a8484224/)
