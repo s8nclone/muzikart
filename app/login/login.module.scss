@@ -1,0 +1,93 @@
+$primaryColor: #5cadd2;
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    gap: 1rem;
+
+    .rightContainer {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        color: $primaryColor;
+
+        .headerText {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        span {
+            .formWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+
+                span {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    label {
+                        font-size: 1rem;
+                    }
+
+                    .formInput {
+                        border: none;
+                        background-color: #D9D9D9;
+                        border-radius: 0.625rem;
+                        height: 2.5rem;
+                        width: 25rem;
+                        padding: 0.5rem;
+                        font-size: 1rem;
+    
+                        &:focus-within,
+                        &:focus {
+                            outline: none;
+                            background-color: #fff;
+                            border: 1px solid #666;
+                        }
+                    }
+
+                    .errorText {
+                        font-size: 0.7rem;
+                        color: #F10101;
+                        text-align: left;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+
+
+                .btn {
+                    width: 10rem;
+                    height: 3rem;
+                }
+            }
+
+            p {
+                font-size: 1rem;
+                margin-top: 2rem;
+                text-align: center;
+                color: #444;
+            }
+        }
+    }
+
+    .leftContainer {
+        width: 50%;
+        height: 100%;
+        background-color: $primaryColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+    }
+}

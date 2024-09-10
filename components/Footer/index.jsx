@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import siteLogo from 'public/images/muzikart-logo.png'
+import siteLogo from '/public/images/muzikart-logo.png'
 import Image from 'next/image'
 
 function Footer() {

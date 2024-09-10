@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import siteLogo from 'public/images/muzikart-logo.png'
+import siteLogo from '/public/images/muzikart-logo.png'
 import React from 'react'
 import styles from './header.module.scss'
 import Link from 'next/link'
@@ -23,7 +23,7 @@ function Header() {
           </div>
           <div className={styles.userLinks}>
             <Link href="/cart">Cart</Link>
-            <Link href="#">Login</Link>
+            <Link href="/login">Login</Link>
           </div>
         </nav>
     </>

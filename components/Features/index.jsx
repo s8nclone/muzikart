@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import uploadImage from 'public/images/upload-image.webp'
-import saveImage from 'public/images/save-image.webp'
-import editImage from 'public/images/edit-image.jpg'
+import uploadImage from '/public/images/upload-cuate.png'
+import saveImage from '/public/images/download-cuate.png'
+import editImage from '/public/images/edit-photo-pana.png'
 
 function FeaturesSection() {
   return (
