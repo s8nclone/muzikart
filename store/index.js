@@ -1,8 +1,10 @@
 
 import { signup } from "@/app/actions/signupAction";
+import { signin } from "@/app/actions/signinAction";
 import { redirect } from "next/navigation";
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
+import { toast } from "react-toastify";
 
 const useStore = create(
     persist((set) => ({
@@ -13,17 +15,23 @@ const useStore = create(
         signup: async (email, username, password) => {
             try {
                 const data = await signup(email, username, password);
-                set({ user: data.user, auth_token: data.token, isAuth: true });
+                const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+                set({ user: data.user, auth_token: token ? token.split('=')[1] : null, isAuth: true });
+
+                // set({ user: data.user, auth_token: data.token, isAuth: true });
             } catch (error) {
                 console.error("Signup failed", error.message);
                 set({ isAuth: false });
             }
         },
     
-        login: async (email, password) => {
+        login: async (username, password) => {
             try {
-                const data = await login(email, password);
-                set({ user: data.user, auth_token: data.token, isAuth: true });
+                const data = await signin(username, password);
+                const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+                set({ user: data.user, auth_token: token ? token.split('=')[1] : null, isAuth: true });
+
+                // set({ user: data.user, auth_token: data.token, isAuth: true });
             } catch (error) {
                 console.error("Login failed", error.message);
                 set({ isAuth: false });
@@ -31,8 +39,11 @@ const useStore = create(
         },
     
         logout: () => {
-            set({ user: null, token: null, isAuth: false });
+            set({ token: null, isAuth: false });
             // You might also want to clear cookies or localStorage here
+            toast.info("Logged out successfully", {
+                position: "top-right"
+            })
         }
         
         }),

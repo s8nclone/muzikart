@@ -5,6 +5,8 @@ import products from '../../public/products.json'
 import styles from './Catalog.module.scss'
 import ProductDetails from '@/components/product-details'
 import Cart from '@/components/cart'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 function CatalogPage() {
   const [cart, setCart] = useState({ products: [] })
@@ -23,6 +25,7 @@ function CatalogPage() {
 
   return (
     <>
+      <Header />
       <div className={styles.container}>
         <div className={styles.mainLeft}>
           <h1 className={styles.header}>Catalog</h1>
@@ -39,8 +42,9 @@ function CatalogPage() {
           <Cart cartItems={cart.products} removeItemFromCart={removeItemFromCart} />
         </div>
       </div>
+      <Footer />
     </>
   )
 }
 
-export default CatalogPage
+export default CatalogPage;

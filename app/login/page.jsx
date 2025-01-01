@@ -8,7 +8,10 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from 'react-hook-form'
 import styles from "./login.module.scss"
 import Link from 'next/link'
-import { authApi } from "@/pages/useAxios"
+import { Oval } from 'react-loader-spinner'
+import useStore from '@/store'
+import { toast } from 'react-toastify'
+import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
     username: z.string().min(1, "username is required"),
@@ -19,11 +22,12 @@ const formSchema = z.object({
 })
 
 const Login = () => {
-
+    const login = useStore(state => state.login);
+    const router = useRouter()
     const { 
         register, 
-        handleSubmit, 
-        formState: { errors } 
+        handleSubmit,
+        formState: { errors, isSubmitting } 
     } = useForm({
         resolver: zodResolver(formSchema)
     })
@@ -33,19 +37,24 @@ const Login = () => {
         try {
             const { username, password } = data
 
-            response = await authApi.post("/api/users/login", {
+            await login(
                 username,
                 password
+            )
+
+            console.log("Login successful")
+            toast.success("Login successful!", {
+                positon: "top-right"
             })
 
-            console.log("login successful: ", response.data)
+            router.push("/catalog")
         } catch (error) {
             console.error(error)
+            toast.error("Login failed. Try again!", {
+                positon: "top-right"
+            })
         }
 
-        // console.log(data)
-
-        // console.log("username:", data.username)
     }
     
 
@@ -72,10 +81,24 @@ const Login = () => {
                             {errors.password && <p className={styles.errorText}>{errors.password.message}</p>}
                         </span>
 
-                        <button type="submit" className={styles.btn} >Login</button>
+                        <button type="submit" className={styles.btn} 
+                        >
+                            {isSubmitting ? (
+                                <Oval
+                                    visible={isSubmitting}
+                                    height="30"
+                                    width="30"
+                                    color="#4fa94d"
+                                    ariaLabel="oval-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                />
+                            ): <>Login</>
+                            }
+                        </button>
                     </form>
 
-                    <p >Don't have an account? <Link href={"/signup"} className='cta' >Sign Up</Link></p>
+                    <p >Don't have an account? <Link href={"/signup"} className="cta" >Sign Up</Link></p>
                 </span>
             </div>
         </section>

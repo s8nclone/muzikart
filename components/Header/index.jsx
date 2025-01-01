@@ -1,10 +1,16 @@
+"use client"
+
 import Image from 'next/image'
 import siteLogo from '/public/images/muzikart-logo.png'
 import React from 'react'
 import styles from './header.module.scss'
 import Link from 'next/link'
+import useStore from '@/store'
+import { useRouter } from 'next/navigation'
 
 function Header() {
+  const { isAuth, logout } = useStore()
+  const route = useRouter();
   return (
     <>
         <nav className={styles.header}>
@@ -23,7 +29,15 @@ function Header() {
           </div>
           <div className={styles.userLinks}>
             <Link href="/cart">Cart</Link>
-            <Link href="/login">Login</Link>
+
+            {isAuth 
+              ? (
+                <button onClick={() => {logout(); route.push("/login")}}>Logout</button>
+              ) 
+              : (
+                <Link href="/login">Login</Link>
+              )
+            }
           </div>
         </nav>
     </>

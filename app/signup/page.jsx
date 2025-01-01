@@ -10,6 +10,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { SignupFormSchema } from '@/lib/definitions'
 import { useRouter } from 'next/navigation'
 import useStore from '@/store'
+import { Oval } from 'react-loader-spinner'
+import { toast } from 'react-toastify'
 
 
 
@@ -22,8 +24,8 @@ const Signup = () => {
 
     const { 
         register, 
-        handleSubmit, 
-        formState: { errors } 
+        handleSubmit,
+        formState: { errors, isSubmitting } 
     } = useForm({
         resolver: zodResolver(SignupFormSchema)
     })
@@ -31,13 +33,20 @@ const Signup = () => {
     const onFormSubmit = async (data) => {
         setError(null)
 
+        const { email, username, password } = data
+        
         try {
-            await signup(data.email, data.username, data.password);
-            // Redirect or perform other actions after successful signup
+            await signup(email, username, password);
             // redirect("/login")
+            toast.success("Signup successful!", {
+                positon: "top-right"
+            });
             router.push("/login")
         } catch (err) {
             setError(err.message);
+            toast.error("Signup failed. Try again!", {
+                positon: "top-right"
+            });
         }
     }
 
@@ -69,7 +78,20 @@ const Signup = () => {
                             {errors?.password && <p className={styles.errorText}>{errors?.password.message}</p>}
                         </span>
 
-                        <button type="submit" className={styles.btn} >Sign up</button>
+                        <button type="submit" className={styles.btn} >
+                            {isSubmitting ? (
+                                <Oval
+                                    visible={isSubmitting}
+                                    height="30"
+                                    width="30"
+                                    color="#4fa94d"
+                                    ariaLabel="oval-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                />
+                            ) : <>Sign up</>
+                            }
+                        </button>
                     </form>
 
                     <p >Already have an account? <Link href={"/login"} className='cta' >Login</Link></p>

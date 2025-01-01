@@ -38,6 +38,7 @@ $secondaryColor: #f27cb1;
 
                     label {
                         font-size: 1rem;
+                        color: #D9D9D9;
                     }
 
                     .formInput {
@@ -72,6 +73,10 @@ $secondaryColor: #f27cb1;
                     height: 3rem;
                     background-color: #fff;
                     color: $primaryColor;
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     &:hover {
                         color: $secondaryColor;
