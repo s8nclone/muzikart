@@ -1,6 +1,6 @@
 "use server"
 
-import { authApi } from "@/pages/useAxios"
+import authApi from "@/pages/useAxios";
 
 export const signup = async (email, username, password) => {
     try {
