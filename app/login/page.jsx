@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import logintoon from "/public/images/login-cuate.png"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -12,6 +12,8 @@ import { Oval } from 'react-loader-spinner'
 import useStore from '@/store'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
+// import view from "/public/icons/eyeview.svg"
+// import hide from "/public/icons/hide.svg"
 
 const formSchema = z.object({
     username: z.string().min(1, "username is required"),
@@ -23,7 +25,10 @@ const formSchema = z.object({
 
 const Login = () => {
     const login = useStore(state => state.login);
-    const router = useRouter()
+    const router = useRouter();
+
+    const [viewPassword, setViewPssword] = useState(false);
+
     const { 
         register, 
         handleSubmit,
@@ -77,7 +82,19 @@ const Login = () => {
 
                         <span>
                             <label>Password</label>
-                            <input {...register("password")} type="password" placeholder="password" className={styles.formInput} />
+                                <input {
+                                    ...register("password")} 
+                                    type="password"
+                                    placeholder="password"
+                                    className={styles.formInput} 
+                                />
+
+                                {/* <Image
+                                    src={viewPassword ? hide : view} 
+                                    alt="view password"
+                                    onClick={() => setViewPssword(!viewPassword)}
+                                    className={styles.icon}
+                                /> */}
                             {errors.password && <p className={styles.errorText}>{errors.password.message}</p>}
                         </span>
 
@@ -98,7 +115,7 @@ const Login = () => {
                         </button>
                     </form>
 
-                    <p >Don't have an account? <Link href={"/signup"} className="cta" >Sign Up</Link></p>
+                    <p >Don&apos;t have an account? <Link href={"/signup"} className="cta" >Sign Up</Link></p>
                 </span>
             </div>
         </section>
