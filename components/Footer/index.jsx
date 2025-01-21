@@ -10,7 +10,7 @@ function Footer() {
         <footer className='footer'>
             <div className='footer-top-section'>
                 <div>
-                    <Image src={siteLogo} alt='footer logo' width={200} height={200} />
+                    <Image src={siteLogo} alt='footer logo' width={150} height={150} />
                     <h1>MUZIKART</h1>
                 </div>
 
@@ -49,7 +49,7 @@ function Footer() {
                 
             </div>
             <div>
-                <p className="text-center">Copyright &copy; 2019 - All Rights Reserved</p>
+                <p className="text-center">Copyright &copy; 2025 - All Rights Reserved</p>
             </div>
         </footer>
     </>
