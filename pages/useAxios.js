@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = process.env.NEXT_BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 //create an Axios instance with a config to prevent us from repeating these options in every request
 
 const authApi = axios.create({
