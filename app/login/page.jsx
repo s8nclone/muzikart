@@ -44,16 +44,16 @@ const Login = () => {
             const res = await authApi.post("/api/signin", data);
 
             if (res.status === 200) {
-                // store.AuthUser(res.data.user);
-                // store.AuthToken(res.data.token);
-                // store.IsAuth(true);
+                store.setAuthUser(res.data.user);
+                store.setAuthToken(res.data.token);
+                store.setIsAuth(true);
 
                 console.log("Login successful", res.data)
                 toast.success("Login successful!", {
                     positon: "top-right"
                 })
     
-                // router.push("/shop")
+                router.push("/shop")
             }
         } catch (error) {
             console.error(error)

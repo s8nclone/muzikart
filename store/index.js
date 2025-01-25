@@ -10,11 +10,13 @@ const useStore = create(
         isAuth: false,
         auth_token: null,
         products: [],
+        catalog: [],
 
         setProducts: (product) => {set({products: product})},
         setAuthUser: (user) => {set({authUser: user})},
         setAuthToken: (token) => {set({auth_token: token})},
         setIsAuth: (status) => {set({ isAuth: status });},
+        setCatalog: (catalog) => {set({ catalog: catalog })},
 
         // signup: async (email, username, password) => {
         //     try {

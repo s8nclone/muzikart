@@ -1,13 +1,11 @@
 $header-font-size: 40px;
 $header-color: #555;
-$header-margin: 4rem;
+$header-margin: 8rem;
 
 .container {
-  display: flex;
+//   display: flex;
+//   flex-direction: column;
 
-  .mainLeft {
-    flex-grow: 1;
-    margin: 50px;
 
     .header {
       font-size: $header-font-size;
@@ -15,6 +13,7 @@ $header-margin: 4rem;
       margin-top: $header-margin;
       display: flex;
       justify-content: space-around;
+
     }
 
     .products {
@@ -39,5 +38,4 @@ $header-margin: 4rem;
       margin-top: $header-margin;
       text-align: center;
     }
-  }
 }

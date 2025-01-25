@@ -23,17 +23,16 @@ export async function POST(request) {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const user = await prisma.$transaction(async (tx) => {
-            const existingUser = await tx.users.findUnique({ where: { email } });
+            const existingUser = await tx.Users.findUnique({ where: { email } });
             if (existingUser) {
-                // Improved: Clearer error message for better UX.
                 throw new Error("An account with this email already exists.");
             }
 
-            return tx.users.create({
+            return tx.Users.create({
                 data: { 
                     email, 
                     username, 
-                    password_hash: hashedPassword 
+                    password: hashedPassword 
                 },
             });
         });
@@ -44,7 +43,7 @@ export async function POST(request) {
             { expiresIn: "1h" }
         );
 
-        // Improved: Added `SameSite=Strict` for enhanced cookie security.
+        //use `SameSite=Strict` for enhanced cookie security.
         const isProd = process.env.NODE_ENV === "production";
         const cookieOptions = {
             "Set-Cookie": `token=${token}; HttpOnly; SameSite=Strict; ${isProd ? 'Secure;' : ''} Path=/; Max-Age=3600`,

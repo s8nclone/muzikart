@@ -24,7 +24,7 @@ export async function POST(request) {
         });
 
         // Improved: Unified invalid credentials response to prevent leaking info about existing users.
-        if (!user || !(await bcrypt.compare(password, user.password_hash))) {
+        if (!user || !(await bcrypt.compare(password, user.password))) {
             return NextResponse.json(
                 { error: "Invalid username or password" }, 
                 { status: 401 }

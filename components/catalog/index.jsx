@@ -1,29 +1,24 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 
-import styles from './Catalog.module.scss';
-import { currencyFormat } from '../../utils/numericFormatters'
+import styles from './CatalogCard.module.scss';
 
-function Catalog({ product }) {
+function CatalogCard({ product }) {
   return (
     <>
-      <div style={{marginTop: "3rem", fontSize: "5rem"}}>Catalog Page</div>
       <div className={styles.product}>
         <div className={styles.image}>
-          <button className={`button ${styles.addToCart}`} onClick={() => addToCart(product)}>Add to Cart</button>
           <Image
             src={(`/images/albums/${product.imageName}`)}
-            width={400}
-            height={400}
-            alt={product.name}
+            width={200}
+            height={200}
+            alt={product.title}
           />
         </div>
-        <div className={styles.title}><Link href={`/product/${product._id}`}>{product.title}</Link></div>
-        <div className={styles.price}>{currencyFormat(product.price)}</div>
+        <h3 className={styles.title}>{product.title}</h3>
       </div>
     </>
   )
 }
 
-export default Catalog
+export default CatalogCard

@@ -7,6 +7,7 @@ import ProductDetails from '@/components/product-details'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import useStore from '@/store'
+import { toast } from 'react-toastify'
 
 function ShopPage() {
   const store = useStore()
@@ -20,6 +21,10 @@ function ShopPage() {
     setCart(newCart)
     store.setProducts(newCart.products)
     console.log(store.products)
+
+    toast.success("Product added to cart successfully!", {
+      position: "top-center"
+    })
   }
 
   return (
@@ -27,7 +32,7 @@ function ShopPage() {
       <Header />
       <div className={styles.container}>
         <div className={styles.mainLeft}>
-          <h1 className={styles.header}>Catalog</h1>
+          <h1 className={styles.header}>Shop</h1>
           <ul className={styles.products}>
             {products.map((product, index) => (
               <li key={index}>

@@ -1,3 +1,5 @@
+$primaryColor: #5cadd2;
+
 .navLinks,
 .userLinks,
 .header {
@@ -7,7 +9,7 @@
 }
 
 .header {
-    padding-inline: 2rem;
+    padding: 1rem 2rem;
     position: fixed;
     top: 0;
     right: 0;
@@ -22,7 +24,22 @@
     gap: 1rem;
 }
 
+a.active {
+    // padding-bottom: 5px;
+    border-bottom: 2px solid $primaryColor;
+    color: $primaryColor;
+}
+
 .userInfo {
     font-size: 1rem;
-    color: #5cadd2;
+    color: $primaryColor;
+}
+
+.btn {
+    background: #b40606;
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0.5rem;
 }
