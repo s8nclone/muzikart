@@ -30,7 +30,7 @@ function Header() {
           </div>
           <div className={styles.navLinks}>
             <Link href="/">Home</Link>
-            <Link href="/catalog">Shop</Link>
+            <Link href="/shop">Shop</Link>
             <Link href="#">Catalog</Link>
             <Link href="/cart">Cart</Link>
           </div>

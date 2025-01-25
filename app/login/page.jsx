@@ -12,6 +12,7 @@ import { Oval } from 'react-loader-spinner'
 import useStore from '@/store'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
+import authApi from '@/pages/useAxios'
 // import view from "/public/icons/eyeview.svg"
 // import hide from "/public/icons/hide.svg"
 
@@ -24,7 +25,7 @@ const formSchema = z.object({
 })
 
 const Login = () => {
-    const login = useStore(state => state.login);
+    const store = useStore();
     const router = useRouter();
 
     const [viewPassword, setViewPssword] = useState(false);
@@ -40,19 +41,20 @@ const Login = () => {
     const onFormSubmit = async (data) => {
 
         try {
-            const { username, password } = data
+            const res = await authApi.post("/api/signin", data);
 
-            await login(
-                username,
-                password
-            )
+            if (res.status === 200) {
+                // store.AuthUser(res.data.user);
+                // store.AuthToken(res.data.token);
+                // store.IsAuth(true);
 
-            console.log("Login successful")
-            toast.success("Login successful!", {
-                positon: "top-right"
-            })
-
-            router.push("/catalog")
+                console.log("Login successful", res.data)
+                toast.success("Login successful!", {
+                    positon: "top-right"
+                })
+    
+                // router.push("/shop")
+            }
         } catch (error) {
             console.error(error)
             toast.error("Login failed. Try again!", {

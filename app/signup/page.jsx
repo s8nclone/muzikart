@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 import signuptoon from "/public/images/signup.gif"
 import styles from "./signup.module.scss"
 import Link from 'next/link'
@@ -9,17 +9,13 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignupFormSchema } from '@/lib/definitions'
 import { useRouter } from 'next/navigation'
-import useStore from '@/store'
 import { Oval } from 'react-loader-spinner'
 import { toast } from 'react-toastify'
+import authApi from '@/pages/useAxios'
 
 
 
 const Signup = () => {
-    // const {state, formAction} = useFormState(signupFormAction, undefined)
-    const signup = useStore(state => state.signup)
-    const [error, setError] = useState(null)
-
     const router = useRouter()
 
     const { 
@@ -31,17 +27,15 @@ const Signup = () => {
     })
 
     const onFormSubmit = async (data) => {
-        setError(null)
-
-        const { email, username, password } = data
-        
         try {
-            await signup(email, username, password);
-            // redirect("/login")
-            toast.success("Signup successful!", {
-                positon: "top-right"
-            });
-            router.push("/login")
+            const res = await authApi.post("/api/signup", data)
+
+            if (res.status === 200 || res.status === 201) {
+                toast.success("Signup successful!", {
+                    positon: "top-right"
+                });
+                router.push("/login")
+            }
         } catch (err) {
             setError(err.message);
             toast.error("Signup failed. Try again!", {
@@ -49,6 +43,7 @@ const Signup = () => {
             });
         }
     }
+
 
     return (
         <section className={styles.container}>

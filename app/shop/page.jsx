@@ -2,14 +2,13 @@
 
 import React, { useState } from 'react'
 import products from '../../public/products.json'
-import styles from './Catalog.module.scss'
+import styles from './Shop.module.scss'
 import ProductDetails from '@/components/product-details'
-import Cart from '@/components/cart'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import useStore from '@/store'
 
-function CatalogPage() {
+function ShopPage() {
   const store = useStore()
   const [cart, setCart] = useState({ products: [] })
 
@@ -21,15 +20,6 @@ function CatalogPage() {
     setCart(newCart)
     store.setProducts(newCart.products)
     console.log(store.products)
-  }
-
-  function removeItemFromCart(product) {
-    const newCart = {
-      ...cart,
-      products: cart.products.filter((item) => item._id !== product._id), //filter by unique identifier
-    };
-    setCart(newCart)
-    store.setProducts(newCart.products)
   }
 
   return (
@@ -46,14 +36,10 @@ function CatalogPage() {
             ))}
           </ul>
         </div >
-        {/* <div className={styles.rightSidebar}>
-          <h2>Cart</h2>
-          <Cart cartItems={cart.products} removeItemFromCart={removeItemFromCart} />
-        </div> */}
       </div>
       <Footer />
     </>
   )
 }
 
-export default CatalogPage;
+export default ShopPage;

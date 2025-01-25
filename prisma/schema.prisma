@@ -3,33 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
-}
-
-/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
-model gallery {
-  image_id    Int      @id @default(autoincrement())
-  filename    String   @db.VarChar(255)
-  image_data  Bytes
-  file_size   BigInt
-  mime_type   String   @db.VarChar(50)
-  upload_date DateTime @default(now()) @db.Timestamp(6)
-  width       Int?
-  height      Int?
-  description String?
-  price       Int
-  discount    Int?
-  user_id     String?  @db.Uuid
-  uploader_id String?  @db.Uuid
-  users       users?   @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction, map: "fk_user_id")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model users {
-  username      String    @unique @db.VarChar(255)
-  email         String    @unique @db.VarChar(255)
-  password_hash String    @db.Char(60)
-  user_id       String    @id(map: "pk_user_uuid") @unique(map: "unique_user_uuid") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  gallery       gallery[]
+  user_id       BigInt @id @default(autoincrement())
+  username      String @unique @db.VarChar(255)
+  email         String @unique @db.VarChar(255)
+  password_hash String @db.Char(60)
 }
