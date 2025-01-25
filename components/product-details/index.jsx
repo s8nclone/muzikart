@@ -13,7 +13,7 @@ const ProductDetails = ({ product, addToCart }) => {
           src={(`/images/albums/${product.imageName}`)}
           width={200}
           height={200}
-          alt={product.name}
+          alt={product.title}
         />
       </div>
       <div className={styles.title}><Link href={`/catalog/[id]`} as={`/catalog/${product._id}`}>{product.title}</Link></div>

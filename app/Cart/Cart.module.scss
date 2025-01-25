@@ -1,0 +1,38 @@
+$header-font-size: 40px;
+$header-color: #555;
+$header-margin: 4rem;
+$primaryColor: #5cadd2;
+$secondaryColor: #f27cb1;
+
+.container {
+    max-width: 1200px;
+    margin: 5rem auto;
+
+    .header {
+        font-size: $header-font-size;
+        color: $header-color;
+        margin-top: $header-margin;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .products {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+
+    .btn {
+        width: 10rem;
+        height: 3rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5rem auto;
+        
+        &:hover {
+            color: $secondaryColor;
+        }
+    }
+
+}

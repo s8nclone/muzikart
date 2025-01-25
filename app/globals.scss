@@ -27,8 +27,9 @@ a {
 }
 
 a.active {
-  padding-bottom: 5px;
-  border-bottom: 2px solid $primaryColor;
+  // padding-bottom: 5px;
+  // border-bottom: 2px solid $primaryColor;
+  color: #5cadd2;
 }
 
 a.button.active {

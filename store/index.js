@@ -11,6 +11,9 @@ const useStore = create(
         user: null,
         isAuth: false,
         auth_token: null,
+        products: [],
+
+        setProducts: (product) => {set({products: product})},
 
         signup: async (email, username, password) => {
             try {

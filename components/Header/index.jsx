@@ -9,8 +9,14 @@ import useStore from '@/store'
 import { useRouter } from 'next/navigation'
 
 function Header() {
-  const { isAuth, logout } = useStore()
-  const route = useRouter();
+  const { isAuth, logout, user } = useStore()
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
+  };
+
   return (
     <>
         <nav className={styles.header}>
@@ -24,15 +30,16 @@ function Header() {
           </div>
           <div className={styles.navLinks}>
             <Link href="/">Home</Link>
-            <Link href="/catalog">Catalog</Link>
-            <Link href="#">Shop</Link>
+            <Link href="/catalog">Shop</Link>
+            <Link href="#">Catalog</Link>
+            <Link href="/cart">Cart</Link>
           </div>
           <div className={styles.userLinks}>
-            <Link href="/cart">Cart</Link>
 
+            <p className={styles.userInfo}>Welcome {user?.username}!</p>
             {isAuth 
               ? (
-                <button onClick={() => {logout(); route.push("/login")}}>Logout</button>
+                <button onClick={handleLogout}>Logout</button>
               ) 
               : (
                 <Link href="/login">Login</Link>
