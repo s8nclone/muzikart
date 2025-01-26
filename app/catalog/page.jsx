@@ -1,6 +1,6 @@
 "use client"
 
-import Catalog from '@/components/catalog'
+import Catalog from '@/components/Catalog'
 import styles from './Catalog.module.scss'
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
