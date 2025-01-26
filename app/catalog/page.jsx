@@ -1,6 +1,6 @@
 "use client"
 
-import Catalog from '@/components/Catalog'
+import CatalogCard from '@/components/catalogCard'
 import styles from './Catalog.module.scss'
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -23,7 +23,7 @@ function CatalogPage() {
             <ul className={styles.products}>
                 {catalogItems.map((product, index) => (
                     <li key={index}>
-                      <Catalog product={product}/>
+                      <CatalogCard product={product}/>
                     </li>
                 ))}
             </ul>
