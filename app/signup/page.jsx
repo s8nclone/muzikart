@@ -11,7 +11,7 @@ import { SignupFormSchema } from '@/lib/definitions'
 import { useRouter } from 'next/navigation'
 import { Oval } from 'react-loader-spinner'
 import { toast } from 'react-toastify'
-import authApi from '@/pages/useAxios'
+import authApi from '@/lib/useAxios'
 
 
 

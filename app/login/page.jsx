@@ -12,7 +12,7 @@ import { Oval } from 'react-loader-spinner'
 import useStore from '@/store'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/navigation'
-import authApi from '@/pages/useAxios'
+import authApi from '@/lib/useAxios'
 // import view from "/public/icons/eyeview.svg"
 // import hide from "/public/icons/hide.svg"
 
