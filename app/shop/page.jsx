@@ -8,6 +8,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import useStore from '@/store'
 import { toast } from 'react-toastify'
+import withAuth from '@/hooks/withAuth'
 
 function ShopPage() {
   const store = useStore()
@@ -47,4 +48,4 @@ function ShopPage() {
   )
 }
 
-export default ShopPage;
+export default withAuth(ShopPage);

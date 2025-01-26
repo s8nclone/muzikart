@@ -37,10 +37,12 @@ function Header() {
           </div>
           <div className={styles.userLinks}>
 
-            <p className={styles.userInfo}>Welcome {authUser?.username}!</p>
             {isAuth 
               ? (
-                <button className={styles.btn} onClick={handleLogout}>Logout</button>
+                <>
+                  <p className={styles.userInfo}>Welcome {authUser?.username}!</p>
+                  <button className={styles.btn} onClick={handleLogout}>Logout</button>
+                </>
               ) 
               : (
                 <Link href="/login">Login</Link>

@@ -6,8 +6,9 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import useStore from '@/store';
 import React from 'react';
+import withAuth from '@/hooks/withAuth';
 
-function CartPage() {
+function CatalogPage() {
   const store = useStore();
   const catalogItems = store.catalog;
 
@@ -16,13 +17,22 @@ function CartPage() {
       <Header />
       <div className={styles.container}>
         <h2 className={styles.header}>Catalog</h2>
-        <ul className={styles.products}>
-            {catalogItems.map((product, index) => (
-                <li key={index}>
-                  <Catalog product={product}/>
-                </li>
-            ))}
-        </ul>
+
+        {catalogItems > 0 
+          ? (
+            <ul className={styles.products}>
+                {catalogItems.map((product, index) => (
+                    <li key={index}>
+                      <Catalog product={product}/>
+                    </li>
+                ))}
+            </ul>
+          ) : (
+            <>
+              <h3 className={styles.emptyCart}>You have no items in your catalog!</h3>
+            </>
+          )
+        }
 
       </div>
       <Footer />
@@ -30,4 +40,4 @@ function CartPage() {
   )
 }
 
-export default CartPage
+export default withAuth(CatalogPage);
