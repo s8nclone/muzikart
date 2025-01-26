@@ -1,6 +1,8 @@
 $header-font-size: 40px;
 $header-color: #555;
 $header-margin: 8rem;
+$primaryColor: #5cadd2;
+$secondaryColor: #f27cb1;
 
 .container {
 //   display: flex;
@@ -36,6 +38,20 @@ $header-margin: 8rem;
       font-size: 20px;
       padding-top: 20px;
     }
+
+    .btn {
+      width: 10rem;
+      height: 3rem;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5rem auto;
+      
+      &:hover {
+          color: $secondaryColor;
+      }
+  }
   
 
   .rightSidebar {

@@ -12,21 +12,29 @@ function CatalogPage() {
   const store = useStore();
   const catalogItems = store.catalog;
 
+  const clearCatalog = () => {
+    store.setCatalog([]);
+  }
+
   return (
     <>
       <Header />
       <div className={styles.container}>
         <h2 className={styles.header}>Catalog</h2>
 
-        {catalogItems > 0 
+        {catalogItems.length > 0 
           ? (
-            <ul className={styles.products}>
-                {catalogItems.map((product, index) => (
-                    <li key={index}>
-                      <CatalogCard product={product}/>
-                    </li>
-                ))}
-            </ul>
+            <div>
+              <ul className={styles.products}>
+                  {catalogItems.map((product, index) => (
+                      <li key={index}>
+                        <CatalogCard product={product}/>
+                      </li>
+                  ))}
+              </ul>
+  
+              <button className={styles.btn} onClick={clearCatalog} >Clear catalog</button>
+            </div>
           ) : (
             <>
               <h3 className={styles.emptyCart}>You have no items in your catalog!</h3>

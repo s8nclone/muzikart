@@ -21,12 +21,15 @@ function CartPage() {
   }
 
   function onCheckout() {
+    const updatedCatalog = [...store.catalog, ...cartItems];
+    store.setCatalog(updatedCatalog);
+  
+    // Clear the cart
+    store.setProducts([]);
+    
     toast.success("Checkout successful", {
       position: "top-right"
     })
-
-    store.catalog.push(...cartItems)
-    store.setProducts(null)
     router.push("/catalog")
   }
 
