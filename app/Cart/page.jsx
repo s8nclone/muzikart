@@ -1,6 +1,5 @@
 "use client"
 
-import Cart from '@/components/cart'
 import styles from './Cart.module.scss'
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -9,6 +8,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import withAuth from '@/hooks/withAuth';
+import Cart from '@/components/Cart'
 
 function CartPage() {
   const store = useStore();
