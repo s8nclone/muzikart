@@ -1,5 +1,6 @@
 import './globals.scss'
 import { Inter } from 'next/font/google'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <main style={{minHeight: '60dvh'}}>
           {children}
           <ToastContainer />
+          <SpeedInsights />
         </main>
       </body>
     </html>

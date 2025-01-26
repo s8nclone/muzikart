@@ -8,6 +8,7 @@ import useStore from '@/store';
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import withAuth from '@/hooks/withAuth';
 
 function CartPage() {
   const store = useStore();
@@ -45,4 +46,4 @@ function CartPage() {
   )
 }
 
-export default CartPage
+export default withAuth(CartPage);
