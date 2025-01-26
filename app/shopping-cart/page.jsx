@@ -7,8 +7,8 @@ import useStore from '@/store';
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
-import withAuth from '@/hooks/withAuth';
-import Cart from '@/components/Cart'
+import withAuth from '@/hooks/withAuth'
+import Cart from '@/components/cartPage';
 
 function CartPage() {
   const store = useStore();

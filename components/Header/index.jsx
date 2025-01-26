@@ -33,7 +33,7 @@ function Header() {
             <Link className={`${pathname === "/" ? styles.active : ""}`} href="/">Home</Link>
             <Link className={`${pathname === "/shop" ? styles.active : ""}`} href="/shop">Shop</Link>
             <Link className={`${pathname === "/catalog" ? styles.active : ""}`} href="/catalog">Catalog</Link>
-            <Link className={`${pathname === "/cart" ? styles.active : ""}`} href="/cart">Cart</Link>
+            <Link className={`${pathname === "/shopping-cart" ? styles.active : ""}`} href="/shopping-cart">Cart</Link>
           </div>
           <div className={styles.userLinks}>
 
